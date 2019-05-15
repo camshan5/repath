@@ -35,17 +35,8 @@ def find_dir():
         print("Directory does not exist")
 
 
-#
-# def tree(directory):
-#     print(f"+ {directory}")
-#
-#     for path_ in sorted(directory.rglob("*")):
-#         depth = len(path_.relative_to(directory).parts)
-#         spacer = "\t" * depth
-#         print(f"{spacer} + {path_.name}")
 
 
-# Driver Code
 if __name__ == "__main__":
     # tree(Path.cwd())
     find_dir()
