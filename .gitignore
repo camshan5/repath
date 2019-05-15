@@ -3,12 +3,8 @@
 .vscode
 .idea
 
-# Distribution / Packaging
-dist
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
 
 # C extensions
 *.so
@@ -16,21 +12,10 @@ __pycache__/
 # Distribution / packaging
 bin/
 build/
-develop-eggs/
 dist/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # pyenv
 .python-version
-
 
 # Environments
 .env
@@ -38,5 +23,3 @@ var/
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
