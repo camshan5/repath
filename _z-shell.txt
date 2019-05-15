@@ -1,0 +1,23 @@
+# Z-SHELL CONFIGURATIONS
+# (add directly to .zshrc file)
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH="/Users/camshan/.oh-my-zsh"
+
+ZSH_THEME="dracula"
+ENABLE_CORRECTION="true"
+
+source $ZSH/oh-my-zsh.sh
+
+# USER CONFIGURATIONS
+
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$PYENV_ROOT/bin:$PATH" # set pyenv as default path
+export PYENV_ROOT="$HOME/.pyenv" # needed by pipenv
+export PATH=~/.local/bin:$PATH
