@@ -34,7 +34,7 @@ def unique_path(directory, name_pattern):
             return path
 
 
-def main():
+def rename():
     # Function to rename multiple files
     i = 0
     media_folder = pathlib.Path(r"/Users/Developer")
