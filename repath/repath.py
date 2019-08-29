@@ -4,6 +4,9 @@ from os import system, name, walk
 from pathlib import Path, PurePath
 from bullet import Bullet, VerticalPrompt, ScrollBar
 
+cwd = Path.cwd()
+selected_files = []
+
 
 def clear():
     # for windows
@@ -14,10 +17,23 @@ def clear():
         _ = system("clear")
 
 
-cwd = Path.cwd()
 
-selected_files = []
+# for root, dirs, files in os.walk("."):
+#     path = root.split(os.sep)
+#     print((len(path) - 1) * '---', os.path.basename(root))
+#     for file in files:
+#         print(len(path) * '---', file)
 
+def find_jpeg():
+    import glob
+    import shutil
+    import os
+
+    src_dir = "00"
+    dst_dir = "00/"
+
+    for jpgfile in glob.iglob(os.path.join(src_dir, "*.jpeg")):
+        shutil.copy(jpgfile, dst_dir)
 
 def build_path(*args, **kwargs):
 
@@ -43,19 +59,14 @@ def build_path(*args, **kwargs):
 
 
 def bullet_prompt(path_list):
-
     cli = VerticalPrompt(
         [Bullet("Select a file or path", choices=path_list, bullet="→")], spacing=1
     )
-
     result = cli.launch()
-
     result_item = result.pop()
-
     returned_item = result_item[1]
 
     print(f"You selected: {returned_item}")
-
     selected_files.append(returned_item)
 
 
@@ -81,10 +92,9 @@ def find_ext():
         choices=sfx_list,
         bullet="→",
     )
+
     result = cli.launch()
-
     print(f"\nYou selected the '{result}' file suffix\n ")
-
     return result
 
 
@@ -129,5 +139,4 @@ if __name__ == "__main__":
     find_dir()
     # p = Path.cwd()
     # list_files(str(p))
-
     build_path()
