@@ -22,9 +22,9 @@ selected_files = []
 def build_path(*args, **kwargs):
 
     n = 0
+    key = n + 1
     for item in selected_files:
 
-        key = n + 1
         d = {key: item}
 
     print(d)
